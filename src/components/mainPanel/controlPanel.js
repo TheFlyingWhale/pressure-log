@@ -12,11 +12,13 @@ export const ControlPanel = props => {
     const dispatch = useDispatch();
 
     const handleReset = () => {
-        dispatch(setTemperature(20));
-        dispatch(setFL(25));
-        dispatch(setFR(25));
-        dispatch(setRL(25));
-        dispatch(setRR(25));
+        if(!lockedState){
+            dispatch(setTemperature(20));
+            dispatch(setFL(25));
+            dispatch(setFR(25));
+            dispatch(setRL(25));
+            dispatch(setRR(25));
+        }
     }
     
     return (
@@ -26,6 +28,7 @@ export const ControlPanel = props => {
             >{lockedState ? 'unlock' : 'lock'}</button>
             <button
                 onClick={handleReset}
+                disabled={lockedState}
             >Reset</button>
         </div>
     )
