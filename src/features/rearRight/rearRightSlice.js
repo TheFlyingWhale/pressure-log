@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    pressure: 29,
+    pressure: 25,
 }
 
 export const rearRightSlice = createSlice({

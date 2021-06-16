@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    temperature: 15
+    temperature: 20
 }
 
 export const trackSurfaceSlice = createSlice({
@@ -13,11 +13,14 @@ export const trackSurfaceSlice = createSlice({
         },
         decrement: state => {
             state.temperature -= 1;
+        },
+        setTemperature: (state, action) => {
+            state.temperature = action.payload;
         }
     }
 });
 
-export const { increment, decrement } = trackSurfaceSlice.actions;
+export const { increment, decrement, setTemperature } = trackSurfaceSlice.actions;
 
 export const selectTrackSurface = state => state.trackSurface.temperature;
 
