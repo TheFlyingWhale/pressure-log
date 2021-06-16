@@ -1,10 +1,12 @@
 import React from 'react';
-import { Counter } from '../features/counter/Counter';
 import './App.css';
+import { MainPanel } from '../components/mainPanel/MainPanel'
 
 function App() {
   return (
-      <div>Hello world</div>
+      <div>
+          <MainPanel></MainPanel>
+      </div>
   )
 }
 

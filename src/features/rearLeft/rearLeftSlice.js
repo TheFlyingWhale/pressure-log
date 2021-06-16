@@ -1,0 +1,27 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+const initialState = {
+    pressure: 28.0
+}
+
+export const rearLeftSlice = createSlice({
+    name: 'rearLeft',
+    initialState,
+    reducers: {
+        increment: (state) => {
+            state.pressure = (state.pressure * 10 + 0.1 * 10) / 10;
+        },
+        decrement: (state) => {
+            state.pressure = (state.pressure * 10 - 0.1 * 10) / 10;
+        },
+        setPressure: (state, action) => {
+            state.pressure = action.payload;
+        }
+    }
+});
+
+export const { increment, decrement, setPressure } = rearLeftSlice.actions;
+
+export const selectRearLeft = state => state.rearLeft.pressure;
+
+export default rearLeftSlice.reducer;
