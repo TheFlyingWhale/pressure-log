@@ -1,8 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux';
+import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
 
 export const HorizontalCounter = props => {
+    const lockedState = useSelector(selectLockedState);
     const value = useSelector(props.selector);
     const dispatch = useDispatch();
+
+    const handleChange = () => {
+
+    }
 
     return(
         <div>
@@ -12,7 +18,8 @@ export const HorizontalCounter = props => {
             >+</button>
             <input
                 value={value}
-                disabled={true}
+                disabled={lockedState ? true : false}
+                onChange={handleChange}
             ></input>
             <button
                 onClick={() => dispatch(props.decrement())}

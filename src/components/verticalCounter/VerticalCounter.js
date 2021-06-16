@@ -1,14 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from 'react';
+
+import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
+import { parseInput } from '../../helperFunctions.js';
 
 export const VerticalCounter = props => {
-    const value = useSelector(props.selector);
+    const lockedState = useSelector(selectLockedState);
+    const value = useSelector(props.selector)
     const dispatch = useDispatch();
 
     const handleChange = (event) => {
-        console.log(value);
-        console.log(value.length);
-        //dispatch(props.setPressure(event.target.value));
+        parseInput(event, props.addPeriod, props.setPressure, dispatch);
     }
 
     return(
@@ -19,7 +20,7 @@ export const VerticalCounter = props => {
             >+</button>
             <input
                 value={value}
-                disabled={false}
+                disabled={lockedState ? true : false}
                 onChange={handleChange}
             >
             </input>

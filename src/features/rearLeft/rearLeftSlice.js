@@ -16,11 +16,14 @@ export const rearLeftSlice = createSlice({
         },
         setPressure: (state, action) => {
             state.pressure = action.payload;
+        },
+        addPeriod: (state) => {
+            state.pressure = state.pressure + '.';
         }
     }
 });
 
-export const { increment, decrement, setPressure } = rearLeftSlice.actions;
+export const { increment, decrement, setPressure, addPeriod } = rearLeftSlice.actions;
 
 export const selectRearLeft = state => state.rearLeft.pressure;
 

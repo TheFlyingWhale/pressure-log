@@ -16,11 +16,14 @@ export const frontLeftSlice = createSlice({
         },
         setPressure: (state, action) => {
             state.pressure = action.payload;
+        },
+        addPeriod: (state) => {
+            state.pressure = state.pressure + '.';
         }
     }
 });
 
-export const { increment, decrement, setPressure } = frontLeftSlice.actions;
+export const { increment, decrement, setPressure, addPeriod } = frontLeftSlice.actions;
 
 export const selectFrontLeft = state => state.frontLeft.pressure;
 
