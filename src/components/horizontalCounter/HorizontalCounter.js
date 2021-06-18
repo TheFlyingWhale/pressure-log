@@ -3,6 +3,8 @@ import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
 
 import { setTemperature } from '../../features/trackSurface/trackSurfaceSlice';
 
+import { Counter } from './hzCounterStyles';
+
 export const HorizontalCounter = props => {
     const dispatch = useDispatch();
     const lockedState = useSelector(selectLockedState);
@@ -30,9 +32,9 @@ export const HorizontalCounter = props => {
     }
 
     return(
-        <div>
-            <p>{props.name}</p>
-            {lockedState ? <p>Difference: {difference}</p> : null}
+        <Counter>
+            <p><b>{props.name}</b></p>
+            <p>Difference: {difference}</p>
             <button
                 onClick={handleIncrement}
             >+</button>
@@ -44,6 +46,6 @@ export const HorizontalCounter = props => {
             <button
                 onClick={handleDecrement}
             >-</button>
-        </div>
+        </Counter>
     )
 }

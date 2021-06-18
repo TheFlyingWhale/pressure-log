@@ -2,6 +2,9 @@
   "name": "pressure-log",
   "version": "0.1.0",
   "private": true,
+  "resolutions": {
+    "styled-components": "^5"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^4.2.4",
@@ -10,7 +13,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.3",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3",
+    "styled-components": "^5.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,4 +37,5 @@
       "last 1 safari version"
     ]
   }
+  
 }

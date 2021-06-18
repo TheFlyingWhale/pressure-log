@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
+import { Container, LockButton, UnlockButton, ResetButton } from './controlPanelStyles';
+
 import {lock, unlock, selectLockedState } from "../../features/mainPanel/mainPanelSlice";
 import { setPressure as setFL, setDifference as difFL } from '../../features/frontLeft/frontLeftSlice';
 import { setPressure as setFR, setDifference as difFR } from '../../features/frontRight/frontRightSlice';
@@ -35,14 +37,17 @@ export const ControlPanel = props => {
     }
     
     return (
-        <div>
-            <button
-                onClick={handleLock}
-            >{lockedState ? 'unlock' : 'lock'}</button>
-            <button
+        <Container>
+            {
+                lockedState ?
+                <UnlockButton onClick={handleLock}>Unlock</UnlockButton>:
+                <LockButton onClick={handleLock}>Lock</LockButton>
+            }
+            
+            <ResetButton
                 onClick={handleReset}
                 disabled={lockedState}
-            >Reset</button>
-        </div>
+            >Reset</ResetButton>
+        </Container>
     )
 }

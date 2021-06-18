@@ -1,5 +1,8 @@
 import { VerticalCounter } from '../verticalCounter/VerticalCounter';
 import { HorizontalCounter } from '../horizontalCounter/HorizontalCounter';
+import { HowToPanel } from './howToPanel';
+
+import { Panel, PressureContainer, TemperatureContainer } from './mainPanelStyles';
 
 import { 
     selectTrackSurface,
@@ -60,73 +63,81 @@ import { ControlPanel } from '../mainPanel/controlPanel';
 
 export const MainPanel = () => {
     return (
-        <div>
-            <h1>Pressure log</h1>
-            <HorizontalCounter
-                name="Track Surface"
-                selector={selectTrackSurface}
-                increment={tsIncrement}
-                decrement={tsDecrement}
-                selectDifference={selectDifTrack}
-                increaseDifference={incDifTrack}
-                decreaseDifference={decDifTrack}
-                setDifference={setDifTrack}
-            ></HorizontalCounter>
-
-            <VerticalCounter
-                name="Front Left Tyre"
-                selector={selectFrontLeft}
-                increment={flIncrement}
-                decrement={flDecrement}
-                setPressure={flSetPressure}
-                addPeriod={flAddPeriod}
-                selectDifference={selectDifFL}
-                increaseDifference={incDifFL}
-                decreaseDifference={decDifFL}
-                setDifference={setDifFL}
-            ></VerticalCounter>
-
-            <VerticalCounter
-                name="Front Right Tyre"
-                selector={selectFrontRight}
-                increment={frIncrement}
-                decrement={frDecrement}
-                setPressure={frSetPressure}
-                addPeriod={frAddPeriod}
-                selectDifference={selectDifFR}
-                increaseDifference={incDifFR}
-                decreaseDifference={decDifFR}
-                setDifference={setDifFR}
-            ></VerticalCounter>
-
-            <VerticalCounter
-                name="Rear Left Tyre"
-                selector={selectRearLeft}
-                increment={rlIncrement}
-                decrement={rlDecrement}
-                setPressure={rlSetPressure}
-                addPeriod={rlAddPeriod}
-                selectDifference={selectDifRL}
-                increaseDifference={incDifRL}
-                decreaseDifference={decDifRL}
-                setDifference={setDifRL}
-            ></VerticalCounter>
+        <Panel>
+            <h1 style={{textAlign: 'center'}}>Pressure log</h1>
+            <TemperatureContainer>
+                <HorizontalCounter
+                    name="Track Surface"
+                    selector={selectTrackSurface}
+                    increment={tsIncrement}
+                    decrement={tsDecrement}
+                    selectDifference={selectDifTrack}
+                    increaseDifference={incDifTrack}
+                    decreaseDifference={decDifTrack}
+                    setDifference={setDifTrack}
+                ></HorizontalCounter>
+            </TemperatureContainer>
             
-            <VerticalCounter
-                name="Rear Right Tyre"
-                selector={selectRearRight}
-                increment={rrIncrement}
-                decrement={rrDecrement}
-                setPressure={rrSetPressure}
-                addPeriod={rrAddPeriod}
-                selectDifference={selectDifRR}
-                increaseDifference={incDifRR}
-                decreaseDifference={decDifRR}
-                setDifference={setDifRR}
-            ></VerticalCounter>
+            <PressureContainer>
+                <VerticalCounter
+                    name="Front Left Tyre"
+                    selector={selectFrontLeft}
+                    increment={flIncrement}
+                    decrement={flDecrement}
+                    setPressure={flSetPressure}
+                    addPeriod={flAddPeriod}
+                    selectDifference={selectDifFL}
+                    increaseDifference={incDifFL}
+                    decreaseDifference={decDifFL}
+                    setDifference={setDifFL}
+                ></VerticalCounter>
+
+                <VerticalCounter
+                    name="Front Right Tyre"
+                    selector={selectFrontRight}
+                    increment={frIncrement}
+                    decrement={frDecrement}
+                    setPressure={frSetPressure}
+                    addPeriod={frAddPeriod}
+                    selectDifference={selectDifFR}
+                    increaseDifference={incDifFR}
+                    decreaseDifference={decDifFR}
+                    setDifference={setDifFR}
+                ></VerticalCounter>
+            </PressureContainer>
+
+            <PressureContainer>
+                <VerticalCounter
+                    name="Rear Left Tyre"
+                    selector={selectRearLeft}
+                    increment={rlIncrement}
+                    decrement={rlDecrement}
+                    setPressure={rlSetPressure}
+                    addPeriod={rlAddPeriod}
+                    selectDifference={selectDifRL}
+                    increaseDifference={incDifRL}
+                    decreaseDifference={decDifRL}
+                    setDifference={setDifRL}
+                ></VerticalCounter>
+                
+                <VerticalCounter
+                    name="Rear Right Tyre"
+                    selector={selectRearRight}
+                    increment={rrIncrement}
+                    decrement={rrDecrement}
+                    setPressure={rrSetPressure}
+                    addPeriod={rrAddPeriod}
+                    selectDifference={selectDifRR}
+                    increaseDifference={incDifRR}
+                    decreaseDifference={decDifRR}
+                    setDifference={setDifRR}
+                ></VerticalCounter>
+            </PressureContainer>
 
             <ControlPanel
             ></ControlPanel>
-        </div>
+
+            <HowToPanel></HowToPanel>
+        </Panel>
     )
 }

@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
 import { parseInput } from '../../helperFunctions.js';
 
+import { Counter } from './vcCounterStyles';
+
 export const VerticalCounter = props => {
     const dispatch = useDispatch();
     const lockedState = useSelector(selectLockedState);
@@ -28,9 +30,9 @@ export const VerticalCounter = props => {
     }
 
     return(
-        <div>
-            <p>{props.name}</p>
-            {lockedState ? <p>Difference: {difference}</p> : null}
+        <Counter>
+            <p><b>{props.name}</b></p>
+            <p>Difference: {difference}</p>
             <button
                 onClick={handleIncrement}
             >+</button>
@@ -43,6 +45,6 @@ export const VerticalCounter = props => {
             <button
                 onClick={handleDecrement}
             >-</button>
-        </div>
+        </Counter>
     )
 }
