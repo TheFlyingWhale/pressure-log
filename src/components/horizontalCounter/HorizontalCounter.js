@@ -1,20 +1,40 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
 
+import { setTemperature } from '../../features/trackSurface/trackSurfaceSlice';
+
 export const HorizontalCounter = props => {
+    const dispatch = useDispatch();
     const lockedState = useSelector(selectLockedState);
     const value = useSelector(props.selector);
-    const dispatch = useDispatch();
+    const difference = useSelector(props.selectDifference);
 
-    const handleChange = () => {
+    const handleChange = (event) => {
+        if(event.target.value.length < 3){
+            dispatch(setTemperature(event.target.value));
+        }
+    }
 
+    const handleIncrement = () => {
+        dispatch(props.increment());
+        if(lockedState){
+            dispatch(props.increaseDifference());
+        }
+    }
+
+    const handleDecrement = () => {
+        dispatch(props.decrement());
+        if(lockedState){
+            dispatch(props.decreaseDifference());
+        }
     }
 
     return(
         <div>
             <p>I'm the {props.name}</p>
+            {lockedState ? <p>Difference: {difference}</p> : null}
             <button
-                onClick={() => dispatch(props.increment())}
+                onClick={handleIncrement}
             >+</button>
             <input
                 value={value}
@@ -22,7 +42,7 @@ export const HorizontalCounter = props => {
                 onChange={handleChange}
             ></input>
             <button
-                onClick={() => dispatch(props.decrement())}
+                onClick={handleDecrement}
             >-</button>
         </div>
     )

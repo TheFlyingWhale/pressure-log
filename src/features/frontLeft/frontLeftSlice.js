@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    pressure: 25
+    pressure: 25,
+    difference: 0
 }
 
 export const frontLeftSlice = createSlice({
@@ -19,12 +20,22 @@ export const frontLeftSlice = createSlice({
         },
         addPeriod: (state) => {
             state.pressure = state.pressure + '.';
+        },
+        increaseDifference: state => {
+            state.difference = (state.difference * 10 + 0.1 * 10) / 10;
+        },
+        decreaseDifference: state => {
+            state.difference = (state.difference * 10 - 0.1 * 10) / 10;
+        },
+        setDifference: (state, action) => {
+            state.difference = action.payload;
         }
     }
 });
 
-export const { increment, decrement, setPressure, addPeriod } = frontLeftSlice.actions;
+export const { increment, decrement, setPressure, addPeriod, increaseDifference, decreaseDifference, setDifference } = frontLeftSlice.actions;
 
 export const selectFrontLeft = state => state.frontLeft.pressure;
+export const selectDifference = state => state.frontLeft.difference;
 
 export default frontLeftSlice.reducer;
