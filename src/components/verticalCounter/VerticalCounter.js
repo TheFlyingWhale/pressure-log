@@ -29,7 +29,7 @@ export const VerticalCounter = props => {
 
     return(
         <div>
-            <p>I'm the {props.name}</p>
+            <p>{props.name}</p>
             {lockedState ? <p>Difference: {difference}</p> : null}
             <button
                 onClick={handleIncrement}

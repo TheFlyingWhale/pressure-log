@@ -61,7 +61,7 @@ import { ControlPanel } from '../mainPanel/controlPanel';
 export const MainPanel = () => {
     return (
         <div>
-            <h1>This is the main panel</h1>
+            <h1>Pressure log</h1>
             <HorizontalCounter
                 name="Track Surface"
                 selector={selectTrackSurface}
@@ -74,7 +74,7 @@ export const MainPanel = () => {
             ></HorizontalCounter>
 
             <VerticalCounter
-                name="frontLeft"
+                name="Front Left Tyre"
                 selector={selectFrontLeft}
                 increment={flIncrement}
                 decrement={flDecrement}
@@ -87,7 +87,7 @@ export const MainPanel = () => {
             ></VerticalCounter>
 
             <VerticalCounter
-                name="frontRight"
+                name="Front Right Tyre"
                 selector={selectFrontRight}
                 increment={frIncrement}
                 decrement={frDecrement}
@@ -100,7 +100,7 @@ export const MainPanel = () => {
             ></VerticalCounter>
 
             <VerticalCounter
-                name="rearLeft"
+                name="Rear Left Tyre"
                 selector={selectRearLeft}
                 increment={rlIncrement}
                 decrement={rlDecrement}
@@ -113,7 +113,7 @@ export const MainPanel = () => {
             ></VerticalCounter>
             
             <VerticalCounter
-                name="rearRight"
+                name="Rear Right Tyre"
                 selector={selectRearRight}
                 increment={rrIncrement}
                 decrement={rrDecrement}
