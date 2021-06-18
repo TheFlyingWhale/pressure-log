@@ -19,16 +19,28 @@ const Button = styled.button`
 export const LockButton = styled(Button)`
     background-color: #41DC51;
     color: white;
+
+    &:hover{
+        background-color: #23B031;
+    }
 `;
 
 export const UnlockButton = styled(Button)`
     background-color: orange;
     color: white;
+
+    &:hover{
+        background-color: darkorange;
+    }
 `;
 
 export const ResetButton = styled(Button)`
     background-color: #FF2F2F;
     color: white;
+
+    &:hover{
+        background-color: #E02727;
+    }
 
     &:disabled{
         background-color: lightgray;
