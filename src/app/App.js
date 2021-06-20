@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
+
+import { AppContainer, GlobalStyle } from './AppStyles.js';
 import { MainPanel } from '../components/mainPanel/MainPanel'
 
 function App() {
   return (
-      <div>
+      <AppContainer>
+          <GlobalStyle />
           <MainPanel></MainPanel>
-      </div>
+      </AppContainer>
   )
 }
 
