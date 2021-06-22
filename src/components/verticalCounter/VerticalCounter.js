@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
 import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
-import { parseInput } from '../../helperFunctions.js';
+import { parseInput } from '../../functions/helperFunctions';
 
 import { Counter } from './vcCounterStyles';
 

@@ -8,6 +8,8 @@ import { setPressure as setFR, setDifference as difFR } from '../../features/fro
 import { setPressure as setRL, setDifference as difRL } from '../../features/rearLeft/rearLeftSlice';
 import { setPressure as setRR, setDifference as difRR } from '../../features/rearRight/rearRightSlice';
 import { setTemperature, setDifference as difTrack } from '../../features/trackSurface/trackSurfaceSlice';
+import { store } from '../../app/store';
+import { setTyres } from '../../functions/localStorage';
 
 export const ControlPanel = props => {
     const lockedState = useSelector(selectLockedState);
@@ -33,6 +35,8 @@ export const ControlPanel = props => {
             dispatch(difTrack(0));
         }else{
             dispatch(lock());
+            const storage = store.getState();
+            setTyres(storage.frontLeft.pressure, storage.frontRight.pressure, storage.rearLeft.pressure, storage.rearRight.pressure);
         }
     }
     
