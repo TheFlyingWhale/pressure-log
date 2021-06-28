@@ -13,6 +13,7 @@ import { setTyres } from '../../functions/localStorage';
 //Components
 import { LockButton } from '../lockButton/lockButton';
 import { ResetButton } from "../resetButton/resetButton";
+import { SettingsButton } from '../settingsButton/settingsButton';
 
 //Styles
 import { Container } from './controlPanelStyles';
@@ -55,6 +56,9 @@ export const ControlPanel = props => {
             <ResetButton
                 handleReset={handleReset}
                 lockedState={lockedState}
+            />
+            <SettingsButton
+                lockedState={lockedState} 
             />
         </Container>
     )

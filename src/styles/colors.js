@@ -25,6 +25,7 @@ export const Colors = {
     gray: {
         default: '#646464',
         highContrast: '#4B4B4B',
+        lowContrast: '#C4C4C4',
     },
     background: {
         default: '#F6F6F6'

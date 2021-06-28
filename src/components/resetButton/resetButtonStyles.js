@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../../styles/buttonStyles';
+import { Colors } from '../../styles/colors';
 
 export const StyledResetButton = styled(Button)`
     background-color: #FF2F2F;
@@ -10,6 +11,6 @@ export const StyledResetButton = styled(Button)`
     }
 
     &:disabled{
-        background-color: lightgray;
+        background-color: ${Colors.gray.lowContrast};
     }
 `;
