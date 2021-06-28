@@ -18,22 +18,88 @@ export const Panel = styled.div`
 
     //Tablets
     @media(max-width: 768px){
-        background-color: orange;
+        //background-color: orange;
     }
 
     //Mobile BreakPoint
     @media (max-width: 480px){
         max-width: 100%;
-        background-color: pink;
+        padding: 0;
+        padding-top: 15px;  
+        
+        background-color: white;
+        box-shadow: none;
     }
-`;
-
-export const PressureContainer = styled.div`
-    display:flex;
-    justify-content: space-between;
 `;
 
 export const TemperatureContainer = styled.div`
     display:flex;
     justify-content: center;
+
+    margin-bottom: 25px;
+`;
+
+export const Title = styled.h1`
+    text-align: center;
+
+    //Small screens, laptops
+    @media(max-width: 1024){
+        background-color: yellow;
+    }
+
+    //Tablets
+    @media(max-width: 768px){
+        //background-color: orange;
+    }
+
+    //Mobile BreakPoint
+    @media (max-width: 480px){
+        display: none;
+    }
+`;
+
+export const MiddleContainer = styled.div`
+    display: grid;
+    width: 100%;
+
+    grid-template-columns: 0.75fr 1fr 0.75fr ;
+    grid-template-rows: 1fr 1fr;
+
+    grid-template-areas:
+        "frontLeft car frontRight"
+        "rearLeft car rearRight";
+`;
+
+export const FrontLeftItem = styled.div`
+    width: 100%;
+    height: 100%;
+
+    grid-area: frontLeft;
+`;
+
+export const FrontRightItem = styled.div`
+    width: 100%;
+    height: 100%;
+
+    grid-area: frontRight;
+`;
+export const RearLeftItem = styled.div`
+    width: 100%;
+    height: 100%;
+
+    grid-area: rearLeft;
+`;
+
+export const RearRightItem = styled.div`
+    width: 100%;
+    height: 100%;
+
+    grid-area: rearRight;
+`;
+
+export const CarItem = styled.div`
+    width: 100%;
+    height: 100%;
+ 
+    grid-area: car;
 `;

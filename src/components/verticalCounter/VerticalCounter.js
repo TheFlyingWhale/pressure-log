@@ -3,7 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
 import { parseInput } from '../../functions/helperFunctions';
 
-import { Counter } from './vcCounterStyles';
+//Component imports
+import { Counter, Title, Difference } from './vcCounterStyles';
+import { IncreaseButton } from '../increaseButton/increaseButton';
+import { DecreaseButton } from '../decreaseButton/decreaseButton';
+import { Input } from "../input/input";
 
 export const VerticalCounter = props => {
     const dispatch = useDispatch();
@@ -31,20 +35,19 @@ export const VerticalCounter = props => {
 
     return(
         <Counter>
-            <p><b>{props.name}</b></p>
-            <p>Difference: {difference}</p>
-            <button
-                onClick={handleIncrement}
-            >+</button>
-            <input
+            <Title>{props.name}</Title>
+            <Difference>Difference: {difference}</Difference>
+            <IncreaseButton
+                handleIncrement={handleIncrement}
+            />
+            <Input 
                 value={value}
                 disabled={lockedState ? true : false}
-                onChange={handleChange}
-            >
-            </input>
-            <button
-                onClick={handleDecrement}
-            >-</button>
+                handleChange={handleChange}
+            />
+            <DecreaseButton 
+                handleDecrement={handleDecrement}
+            />
         </Counter>
     )
 }

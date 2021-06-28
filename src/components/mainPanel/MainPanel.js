@@ -2,7 +2,7 @@ import { VerticalCounter } from '../verticalCounter/VerticalCounter';
 import { HorizontalCounter } from '../horizontalCounter/HorizontalCounter';
 import { HowToPanel } from './howToPanel';
 
-import { Panel, PressureContainer, TemperatureContainer } from './mainPanelStyles';
+import { Panel, TemperatureContainer, Title, MiddleContainer, FrontLeftItem, FrontRightItem, CarItem, RearLeftItem, RearRightItem } from './mainPanelStyles';
 
 import { 
     selectTrackSurface,
@@ -59,12 +59,14 @@ import {
     setDifference as setDifRR
 } from '../../features/rearRight/rearRightSlice';
 
-import { ControlPanel } from '../mainPanel/controlPanel';
+import { ControlPanel } from '../controlPanel/controlPanel';
+
+import Car from '../../graphics/car.svg';
 
 export const MainPanel = () => {
     return (
         <Panel>
-            <h1 style={{textAlign: 'center'}}>Pressure log</h1>
+            <Title>Pressure Log</Title>
             <TemperatureContainer>
                 <HorizontalCounter
                     name="Track Surface"
@@ -77,10 +79,11 @@ export const MainPanel = () => {
                     setDifference={setDifTrack}
                 ></HorizontalCounter>
             </TemperatureContainer>
-            
-            <PressureContainer>
+
+            <MiddleContainer>
+                <FrontLeftItem>
                 <VerticalCounter
-                    name="Front Left Tyre"
+                    name="Front Left"
                     selector={selectFrontLeft}
                     increment={flIncrement}
                     decrement={flDecrement}
@@ -91,9 +94,11 @@ export const MainPanel = () => {
                     decreaseDifference={decDifFL}
                     setDifference={setDifFL}
                 ></VerticalCounter>
+                </FrontLeftItem>
 
+                <FrontRightItem>
                 <VerticalCounter
-                    name="Front Right Tyre"
+                    name="Front Right"
                     selector={selectFrontRight}
                     increment={frIncrement}
                     decrement={frDecrement}
@@ -104,11 +109,15 @@ export const MainPanel = () => {
                     decreaseDifference={decDifFR}
                     setDifference={setDifFR}
                 ></VerticalCounter>
-            </PressureContainer>
+                </FrontRightItem>
 
-            <PressureContainer>
+                <CarItem>
+                    <img alt="car" src={Car}/>
+                </CarItem>
+
+                <RearLeftItem>
                 <VerticalCounter
-                    name="Rear Left Tyre"
+                    name="Rear Left"
                     selector={selectRearLeft}
                     increment={rlIncrement}
                     decrement={rlDecrement}
@@ -119,9 +128,11 @@ export const MainPanel = () => {
                     decreaseDifference={decDifRL}
                     setDifference={setDifRL}
                 ></VerticalCounter>
-                
+                </RearLeftItem>
+
+                <RearRightItem>
                 <VerticalCounter
-                    name="Rear Right Tyre"
+                    name="Rear Right"
                     selector={selectRearRight}
                     increment={rrIncrement}
                     decrement={rrDecrement}
@@ -132,7 +143,9 @@ export const MainPanel = () => {
                     decreaseDifference={decDifRR}
                     setDifference={setDifRR}
                 ></VerticalCounter>
-            </PressureContainer>
+                </RearRightItem>
+
+            </MiddleContainer>
 
             <ControlPanel
             ></ControlPanel>

@@ -1,9 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
 
+import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
 import { setTemperature } from '../../features/trackSurface/trackSurfaceSlice';
 
-import { Counter } from './hzCounterStyles';
+//Component Imports
+import { Counter, Title, Difference, InteractionField } from './hzCounterStyles';
+import { IncreaseButton } from '../increaseButton/increaseButton';
+import { DecreaseButton } from '../decreaseButton/decreaseButton';
+import { Input } from '../input/input';
 
 export const HorizontalCounter = props => {
     const dispatch = useDispatch();
@@ -12,7 +16,9 @@ export const HorizontalCounter = props => {
     const difference = useSelector(props.selectDifference);
 
     const handleChange = (event) => {
-        if(event.target.value.length < 3){
+        console.log('handleChange triggered');
+        console.log(event.target.value);
+        if(event.target.value.length <= 2){
             dispatch(setTemperature(event.target.value));
         }
     }
@@ -33,19 +39,21 @@ export const HorizontalCounter = props => {
 
     return(
         <Counter>
-            <p><b>{props.name}</b></p>
-            <p>Difference: {difference}</p>
-            <button
-                onClick={handleIncrement}
-            >+</button>
-            <input
-                value={value}
-                disabled={lockedState ? true : false}
-                onChange={handleChange}
-            ></input>
-            <button
-                onClick={handleDecrement}
-            >-</button>
+            <Title>{props.name}</Title>
+            <Difference>Difference: {difference}</Difference>
+            <InteractionField>
+                <IncreaseButton 
+                    handleIncrement={handleIncrement}
+                />
+                <Input 
+                    value={value}
+                    disabled={lockedState ? true : false}
+                    handleChange={handleChange}
+                />
+                <DecreaseButton 
+                    handleDecrement={handleDecrement}
+                />
+            </InteractionField>
         </Counter>
     )
 }

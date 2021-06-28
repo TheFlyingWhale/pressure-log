@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import { Container, LockButton, UnlockButton, ResetButton } from './controlPanelStyles';
-
+//Features
 import {lock, unlock, selectLockedState } from "../../features/mainPanel/mainPanelSlice";
 import { setPressure as setFL, setDifference as difFL } from '../../features/frontLeft/frontLeftSlice';
 import { setPressure as setFR, setDifference as difFR } from '../../features/frontRight/frontRightSlice';
@@ -10,6 +9,13 @@ import { setPressure as setRR, setDifference as difRR } from '../../features/rea
 import { setTemperature, setDifference as difTrack } from '../../features/trackSurface/trackSurfaceSlice';
 import { store } from '../../app/store';
 import { setTyres } from '../../functions/localStorage';
+
+//Components
+import { LockButton } from '../lockButton/lockButton';
+import { ResetButton } from "../resetButton/resetButton";
+
+//Styles
+import { Container } from './controlPanelStyles';
 
 export const ControlPanel = props => {
     const lockedState = useSelector(selectLockedState);
@@ -42,16 +48,14 @@ export const ControlPanel = props => {
     
     return (
         <Container>
-            {
-                lockedState ?
-                <UnlockButton onClick={handleLock}>Unlock</UnlockButton>:
-                <LockButton onClick={handleLock}>Lock</LockButton>
-            }
-            
+            <LockButton
+                handleLock={handleLock}
+                lockedState={lockedState}
+            />
             <ResetButton
-                onClick={handleReset}
-                disabled={lockedState}
-            >Reset</ResetButton>
+                handleReset={handleReset}
+                lockedState={lockedState}
+            />
         </Container>
     )
 }
