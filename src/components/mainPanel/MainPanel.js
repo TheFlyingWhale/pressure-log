@@ -1,6 +1,7 @@
 import { VerticalCounter } from '../verticalCounter/VerticalCounter';
 import { HorizontalCounter } from '../horizontalCounter/HorizontalCounter';
 import { HowToPanel } from '../howToPanel/howToPanel';
+import { Footer } from '../footer/footer';
 
 import { Panel, TemperatureContainer, Title, MiddleContainer, FrontLeftItem, FrontRightItem, CarItem, RearLeftItem, RearRightItem } from './mainPanelStyles';
 
@@ -147,10 +148,11 @@ export const MainPanel = () => {
 
             </MiddleContainer>
 
-            <ControlPanel
-            ></ControlPanel>
+            <ControlPanel />
 
-            <HowToPanel></HowToPanel>
+            <HowToPanel/>
+
+            <Footer />
         </Panel>
     )
 }
