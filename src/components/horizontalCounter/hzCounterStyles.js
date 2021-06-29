@@ -4,6 +4,8 @@ import { Text } from '../../styles/text';
 import { Colors } from '../../styles/colors';
 
 export const Counter = styled.div`
+    height: 100px;
+
     text-align: center;
 
     display: grid;
