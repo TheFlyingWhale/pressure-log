@@ -67,7 +67,7 @@ export const FrontLeftItem = styled.div`
     height: 100%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
     grid-area: frontLeft;
@@ -78,7 +78,7 @@ export const FrontRightItem = styled.div`
     height: 100%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     grid-area: frontRight;
@@ -88,7 +88,7 @@ export const RearLeftItem = styled.div`
     height: 100%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
     grid-area: rearLeft;
@@ -99,7 +99,7 @@ export const RearRightItem = styled.div`
     height: 100%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     grid-area: rearRight;
