@@ -10,7 +10,7 @@ export const Footer = props => {
                 <Logo alt="Redline Racing League" src={rrlLogo}/>
             </LeftSideContainer>
             <RightSideContainer>
-                <VersionText>Version: Alpha 0.3.0</VersionText>
+                <VersionText>Version: Alpha 0.3.1</VersionText>
                 <DevelopedBy>Author: Ole Walberg <br/> GitHub: <a href="https://github.com/TheFlyingWhale/pressure-log">Pressure Log</a></DevelopedBy>
             </RightSideContainer>
         </FooterContainer>

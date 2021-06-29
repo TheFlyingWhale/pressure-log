@@ -39,6 +39,10 @@ export const TemperatureContainer = styled.div`
     justify-content: center;
 
     margin-bottom: 25px;
+
+    @media (max-width: 480px){
+        margin-bottom: 0px;
+    }
 `;
 
 export const MiddleContainer = styled.div`
