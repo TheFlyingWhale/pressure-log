@@ -6,6 +6,7 @@
         "corsa",
         "heebo",
         "immutator",
-        "reduxjs"
+        "reduxjs",
+        "walberg"
     ]
 }

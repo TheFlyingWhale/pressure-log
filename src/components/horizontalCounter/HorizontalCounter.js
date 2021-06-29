@@ -42,21 +42,24 @@ export const HorizontalCounter = props => {
     }
 
     return(
-        <Counter>
+        <Counter
+            counterSide={props.counterSide}
+        >
             <Title>{props.name}</Title>
-            <Difference>Difference: {difference}</Difference>
+            <Difference>{difference}</Difference>
             <InteractionField>
-                <IncreaseButton 
-                    handleIncrement={handleIncrement}
+                <DecreaseButton 
+                    handleDecrement={handleDecrement}
                 />
                 <Input 
                     value={value}
                     disabled={lockedState ? true : false}
                     handleChange={handleChange}
                     handleBlur={handleBlur}
+                    orientation="horizontal"
                 />
-                <DecreaseButton 
-                    handleDecrement={handleDecrement}
+                <IncreaseButton 
+                    handleIncrement={handleIncrement}
                 />
             </InteractionField>
         </Counter>

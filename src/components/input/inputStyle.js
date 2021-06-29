@@ -4,22 +4,28 @@ import { Colors } from '../../styles/colors';
 import { Text } from '../../styles/text';
 
 export const InputContainer = styled.div`
-    height: 45px;
+    
 `;
 
 export const InputForm = styled.input`
-    -webkit-appearance: none;
-    opacity: 1;
-    height: 45px;
+    width: 60px;
+    height: 25px;
+    margin: ${props => props.orientation === 'horizontal' ? '0px 10px 0px 10px' : '10px 0px 10px 0px' };//10px;
 
     color: ${Colors.gray.default};
     background-color: white;
-    margin: 5px;
 
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+    border: none;
+    border-radius: 5px;
 
     font-family: ${Text.family.heebo};
     font-weight: ${Text.weight.medium};
+    font-size: ${Text.size.medium};
+    text-align: center;
+
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.25);
+    -webkit-appearance: none;
+    opacity: 1;
 
     //Small screens, laptops
     @media(max-width: 1024){
@@ -41,7 +47,6 @@ export const InputForm = styled.input`
         border-radius: 10px;
 
         font-size: ${Text.size.large};
-        text-align: center;
     }
 
     &:disabled{

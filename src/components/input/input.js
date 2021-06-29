@@ -8,6 +8,7 @@ export const Input = props => {
                 disabled={props.disabled}
                 onChange={props.handleChange}
                 onBlur={props.handleBlur}
+                orientation={props.orientation}
             />
         </InputContainer>
     );

@@ -4,7 +4,7 @@ import { selectLockedState } from '../../features/mainPanel/mainPanelSlice';
 import { parseInput } from '../../functions/helperFunctions';
 
 //Component imports
-import { Counter, Title, Difference } from './vcCounterStyles';
+import { Counter, Title, Difference, InteractionField} from './vcCounterStyles';
 import { IncreaseButton } from '../increaseButton/increaseButton';
 import { DecreaseButton } from '../decreaseButton/decreaseButton';
 import { Input } from "../input/input";
@@ -43,21 +43,26 @@ export const VerticalCounter = props => {
     }
 
     return(
-        <Counter>
+        <Counter
+            counterSide={props.counterSide}
+        >
             <Title>{props.name}</Title>
-            <Difference>Difference: {difference}</Difference>
-            <IncreaseButton
-                handleIncrement={handleIncrement}
-            />
-            <Input 
-                value={value}
-                disabled={lockedState ? true : false}
-                handleChange={handleChange}
-                handleBlur={handleBlur}
-            />
-            <DecreaseButton 
-                handleDecrement={handleDecrement}
-            />
+            <Difference>{difference}</Difference>
+            <InteractionField>
+                <IncreaseButton
+                    handleIncrement={handleIncrement}
+                />
+                <Input 
+                    value={value}
+                    disabled={lockedState ? true : false}
+                    handleChange={handleChange}
+                    handleBlur={handleBlur}
+                    orientation="vertical"
+                />
+                <DecreaseButton 
+                    handleDecrement={handleDecrement}
+                />
+            </InteractionField>
         </Counter>
     )
 }

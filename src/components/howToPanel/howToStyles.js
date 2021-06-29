@@ -4,9 +4,12 @@ import { Text } from '../../styles/text';
 import { Colors } from '../../styles/colors';
 
 export const Panel = styled.div`
+    max-width: 750px;
     height: 100%;
     padding: 0;
-    margin: 0;
+    margin: auto;
+    margin-top: 15px;
+    text-align: center;
 
     display: flex;
     flex-direction: column;

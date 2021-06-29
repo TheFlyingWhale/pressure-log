@@ -1,9 +1,7 @@
 import { VerticalCounter } from '../verticalCounter/VerticalCounter';
 import { HorizontalCounter } from '../horizontalCounter/HorizontalCounter';
-import { HowToPanel } from '../howToPanel/howToPanel';
-import { Footer } from '../footer/footer';
 
-import { Panel, TemperatureContainer, Title, MiddleContainer, FrontLeftItem, FrontRightItem, CarItem, RearLeftItem, RearRightItem } from './mainPanelStyles';
+import { Panel, TemperatureContainer, MiddleContainer, FrontLeftItem, FrontRightItem, CarItem, CarImage, RearLeftItem, RearRightItem } from './mainPanelStyles';
 
 import { 
     selectTrackSurface,
@@ -67,7 +65,6 @@ import Car from '../../graphics/car.svg';
 export const MainPanel = () => {
     return (
         <Panel>
-            <Title>Pressure Log</Title>
             <TemperatureContainer>
                 <HorizontalCounter
                     name="Track Surface"
@@ -94,6 +91,7 @@ export const MainPanel = () => {
                     increaseDifference={incDifFL}
                     decreaseDifference={decDifFL}
                     setDifference={setDifFL}
+                    counterSide="left"
                 ></VerticalCounter>
                 </FrontLeftItem>
 
@@ -109,11 +107,12 @@ export const MainPanel = () => {
                     increaseDifference={incDifFR}
                     decreaseDifference={decDifFR}
                     setDifference={setDifFR}
+                    counterSide="right"
                 ></VerticalCounter>
                 </FrontRightItem>
 
                 <CarItem>
-                    <img alt="car" src={Car}/>
+                    <CarImage alt="car" src={Car}/>
                 </CarItem>
 
                 <RearLeftItem>
@@ -128,6 +127,7 @@ export const MainPanel = () => {
                     increaseDifference={incDifRL}
                     decreaseDifference={decDifRL}
                     setDifference={setDifRL}
+                    counterSide="left"
                 ></VerticalCounter>
                 </RearLeftItem>
 
@@ -143,6 +143,7 @@ export const MainPanel = () => {
                     increaseDifference={incDifRR}
                     decreaseDifference={decDifRR}
                     setDifference={setDifRR}
+                    counterSide="right"
                 ></VerticalCounter>
                 </RearRightItem>
 
@@ -150,9 +151,6 @@ export const MainPanel = () => {
 
             <ControlPanel />
 
-            <HowToPanel/>
-
-            <Footer />
         </Panel>
     )
 }

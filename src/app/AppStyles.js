@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-
-import { createGlobalStyle } from 'styled-components';
+import styled, {createGlobalStyle} from 'styled-components';
+import { Colors } from '../styles/colors';
+import { Text } from '../styles/text';
 
 export const GlobalStyle = createGlobalStyle`
     *{
@@ -24,5 +24,31 @@ export const AppContainer = styled.div`
     //Mobile BreakPoint
     @media (max-width: 480px){
         
+    }
+`;
+
+export const Title = styled.h1`
+    text-align: center;
+    padding: 25px;
+
+    color: ${Colors.text.default};
+
+    font-family: ${Text.family.heebo};
+    font-weight: ${Text.weight.bold};
+    font-size: ${Text.size.hero};
+
+    //Small screens, laptops
+    @media(max-width: 1024){
+        background-color: yellow;
+    }
+
+    //Tablets
+    @media(max-width: 768px){
+        //background-color: orange;
+    }
+
+    //Mobile BreakPoint
+    @media (max-width: 480px){
+        display: none;
     }
 `;
