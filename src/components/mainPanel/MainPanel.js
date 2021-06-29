@@ -1,6 +1,6 @@
 import { VerticalCounter } from '../verticalCounter/VerticalCounter';
 import { HorizontalCounter } from '../horizontalCounter/HorizontalCounter';
-import { HowToPanel } from './howToPanel';
+import { HowToPanel } from '../howToPanel/howToPanel';
 
 import { Panel, TemperatureContainer, Title, MiddleContainer, FrontLeftItem, FrontRightItem, CarItem, RearLeftItem, RearRightItem } from './mainPanelStyles';
 

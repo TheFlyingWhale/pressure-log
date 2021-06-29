@@ -16,10 +16,14 @@ export const HorizontalCounter = props => {
     const difference = useSelector(props.selectDifference);
 
     const handleChange = (event) => {
-        console.log('handleChange triggered');
-        console.log(event.target.value);
-        if(event.target.value.length <= 2){
+        if(!isNaN(event.nativeEvent.data) && event.target.value.length < 3){
             dispatch(setTemperature(event.target.value));
+        }
+    }
+
+    const handleBlur = event => {
+        if(event.target.value.length === 0){
+            dispatch(setTemperature(0));
         }
     }
 
@@ -49,6 +53,7 @@ export const HorizontalCounter = props => {
                     value={value}
                     disabled={lockedState ? true : false}
                     handleChange={handleChange}
+                    handleBlur={handleBlur}
                 />
                 <DecreaseButton 
                     handleDecrement={handleDecrement}

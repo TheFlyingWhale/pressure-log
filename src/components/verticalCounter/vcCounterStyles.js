@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
+import { Colors } from '../../styles/colors';
+import { Text } from '../../styles/text';
+
 export const Counter = styled.div`
     text-align: center;
 `;
 
 export const Title = styled.h2`
-    color: #646464;
+    color: ${Colors.text.title};
 
-    font-family: sans-serif;
-    font-weight: normal;
-    font-size: 18px;
+    font-family: ${Text.family.heebo};
+    font-weight: ${Text.weight.default};
+    font-size: ${Text.size.medium};
 `;
 
 export const Difference = styled.p`

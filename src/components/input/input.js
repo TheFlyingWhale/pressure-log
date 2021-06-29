@@ -7,6 +7,7 @@ export const Input = props => {
                 value={props.value}
                 disabled={props.disabled}
                 onChange={props.handleChange}
+                onBlur={props.handleBlur}
             />
         </InputContainer>
     );

@@ -10,7 +10,7 @@ export const trackSurfaceSlice = createSlice({
     initialState,
     reducers: {
         increment: state => {
-            state.temperature = state.temperature + 1;
+            state.temperature = parseInt(state.temperature, 10) + 1;
         },
         decrement: state => {
             state.temperature = state.temperature - 1;

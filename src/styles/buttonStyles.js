@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+
+import { Text } from './text';
 import { Colors } from './colors';
 
 export const Button = styled.button`
@@ -7,16 +9,14 @@ export const Button = styled.button`
 
     border: none;
     border-radius: 10px;
-
-    font-size: 18px;
-    font-weight: 500;
 `;
 
 export const ButtonTitle = styled.p`
     color: ${Colors.text.lowContrast};
 
-    font-size: 12px;
-    font-family: sans-serif;
+    font-family: ${Text.family.heebo};
+    font-size: ${Text.size.small};
+    font-weight: ${Text.weight.default};
 
     margin-bottom: 5px;
 `;

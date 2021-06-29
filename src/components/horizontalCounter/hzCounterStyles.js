@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { Text } from '../../styles/text';
 import { Colors } from '../../styles/colors';
 
 export const Counter = styled.div`
@@ -9,9 +10,9 @@ export const Counter = styled.div`
 export const Title = styled.h2`
     color: ${Colors.text.title};
 
-    font-family: sans-serif;
-    font-weight: normal;
-    font-size: 18px;
+    font-family: ${Text.family.heebo};
+    font-weight: ${Text.weight.default};
+    font-size: ${Text.size.medium};
 `;
 
 export const Difference = styled.p`

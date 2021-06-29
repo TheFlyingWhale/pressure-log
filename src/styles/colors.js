@@ -17,10 +17,11 @@ export const Colors = {
         decrease: '#D32929',
     },
     text: {
+        default: '#646464',
         title: '#646464',
         bread: '#646464',
         lowContrast: '#C4C4C4',
-        highContrast: '#000000'
+        highContrast: '#4B4B4B'
     },
     gray: {
         default: '#646464',

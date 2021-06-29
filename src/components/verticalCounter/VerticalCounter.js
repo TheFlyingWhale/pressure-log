@@ -16,7 +16,16 @@ export const VerticalCounter = props => {
     const value = useSelector(props.selector)
 
     const handleChange = (event) => {
-        parseInput(event, props.addPeriod, props.setPressure, dispatch);
+        if(!isNaN(event.nativeEvent.data) && event.target.value.length < 5){
+            parseInput(event, props.addPeriod, props.setPressure, dispatch);
+        }
+        
+    }
+
+    const handleBlur = event => {
+        if(event.target.value.length === 0){
+            dispatch(props.setPressure(0));
+        }
     }
 
     const handleIncrement = () => {
@@ -44,6 +53,7 @@ export const VerticalCounter = props => {
                 value={value}
                 disabled={lockedState ? true : false}
                 handleChange={handleChange}
+                handleBlur={handleBlur}
             />
             <DecreaseButton 
                 handleDecrement={handleDecrement}
