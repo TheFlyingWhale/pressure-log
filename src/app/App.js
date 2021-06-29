@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AppContainer, GlobalStyle, Title } from './AppStyles.js';
+import { AppContainer, GlobalStyle, Title, AppItem } from './AppStyles.js';
 import GlobalTextStyles from '../styles/text.js';
 import { MainPanel } from '../components/mainPanel/MainPanel'
 import { startupLocalStorage } from '../functions/localStorage';
@@ -13,12 +13,14 @@ function App() {
 
     return (
         <AppContainer>
-            <Title>Pressure Log</Title>
-            <GlobalStyle />
-            <GlobalTextStyles />
-            <MainPanel></MainPanel>
-            <HowToPanel />
-            <Footer />
+            <AppItem>
+                <Title>Pressure Log</Title>
+                <GlobalStyle />
+                <GlobalTextStyles />
+                <MainPanel></MainPanel>
+                <HowToPanel />
+                <Footer />
+            </AppItem>
         </AppContainer>
     )
 }

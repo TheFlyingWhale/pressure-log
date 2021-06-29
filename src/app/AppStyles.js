@@ -11,6 +11,8 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const AppContainer = styled.div`
+    height: 100%;
+
     //Small screens, laptops
     @media(max-width: 1024){
         
@@ -25,11 +27,20 @@ export const AppContainer = styled.div`
     @media (max-width: 480px){
         
     }
+
+    @media (min-height: 1165px){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+`;
+
+export const AppItem = styled.div`
 `;
 
 export const Title = styled.h1`
     text-align: center;
-    padding: 25px;
+    padding: 10px;
 
     color: ${Colors.text.default};
 

@@ -5,15 +5,21 @@ import { Colors } from '../../styles/colors';
 
 export const FooterContainer = styled.div`
     max-width: 750px;
-    margin: auto;
+    padding: 15px;
+    margin: 25px auto;
+
+    border-radius: 15px;
+    background-color: ${Colors.background.default};
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "leftSide rightSide";
 
-    padding: 15px;
-
-    text-align: center;
+    @media (max-width: 480px){
+        background-color: white;
+        box-shadow: none;
+    }
 `;
 
 export const VersionText = styled.p`
@@ -21,7 +27,7 @@ export const VersionText = styled.p`
     font-weight: ${Text.weight.light};
     font-size: ${Text.size.small};
 
-    color: ${Colors.text.lowContrast};
+    color: ${Colors.text.default};
 `;
 
 export const DevelopedBy = styled.p`
@@ -29,7 +35,7 @@ export const DevelopedBy = styled.p`
     font-weight: ${Text.weight.light};
     font-size: ${Text.size.small};
 
-    color: ${Colors.text.lowContrast};
+    color: ${Colors.text.default};
 `;
 
 export const LeftSideContainer = styled.div`
@@ -40,6 +46,8 @@ export const LeftSideContainer = styled.div`
 export const RightSideContainer = styled.div`
     height: 75px;
     padding: 15px;
+
+    text-align: center;
 `;
 
 export const Logo = styled.img`
