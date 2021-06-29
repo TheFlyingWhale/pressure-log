@@ -10,7 +10,7 @@ export const FooterItem = styled.div`
 
     border-radius: 15px;
     background-color: ${Colors.background.default};
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.25);
     border: 1px solid ${Colors.gray.border};
 
     display: grid;

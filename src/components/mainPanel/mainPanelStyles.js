@@ -12,7 +12,7 @@ export const Panel = styled.div`
     padding: 15px;
 
     background-color: ${Colors.background.default};
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.25);
 
     //Small screens, laptops
     @media(max-width: 1024){
