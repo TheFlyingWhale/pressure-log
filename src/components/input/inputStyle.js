@@ -3,11 +3,14 @@ import styled from 'styled-components';
 import { Colors } from '../../styles/colors';
 import { Text } from '../../styles/text';
 
-export const InputContainer = styled.div``;
+export const InputContainer = styled.div`
+    height: 45px;
+`;
 
 export const InputForm = styled.input`
     -webkit-appearance: none;
     opacity: 1;
+    height: 45px;
 
     color: ${Colors.gray.default};
     background-color: white;
