@@ -6,12 +6,13 @@ export const Panel = styled.div`
     width: 750px;
 
     border-radius: 15px;
+    border: 1px solid ${Colors.gray.border};
 
     margin: auto;
     padding: 15px;
 
     background-color: ${Colors.background.default};
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
 
     //Small screens, laptops
     @media(max-width: 1024){

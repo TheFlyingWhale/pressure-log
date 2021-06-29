@@ -3,14 +3,15 @@ import styled from 'styled-components';
 import { Text } from '../../styles/text';
 import { Colors } from '../../styles/colors';
 
-export const FooterContainer = styled.div`
+export const FooterItem = styled.div`
     max-width: 750px;
     padding: 15px;
-    margin: 25px auto;
+    margin: auto;
 
     border-radius: 15px;
     background-color: ${Colors.background.default};
-    box-shadow: 0px 2px 4px rgba(0,0,0,0.15);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
+    border: 1px solid ${Colors.gray.border};
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -19,7 +20,13 @@ export const FooterContainer = styled.div`
     @media (max-width: 480px){
         background-color: white;
         box-shadow: none;
+        border: none;
     }
+`;
+
+export const FooterContainer = styled.div`
+    padding: 25px;
+    
 `;
 
 export const VersionText = styled.p`

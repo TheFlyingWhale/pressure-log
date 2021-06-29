@@ -13,6 +13,7 @@ export const StyledLockButton = styled(Button)`
 
     @media(hover:hover){
         &:hover{
+            cursor: pointer;
             background-color: ${props => props.lockedState ? Colors.orange.hover : Colors.green.hover};
         }
     }

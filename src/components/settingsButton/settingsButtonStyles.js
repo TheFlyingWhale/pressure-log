@@ -9,4 +9,8 @@ export const StyledSettingsButton = styled(Button)`
     &:disabled{
         background-color: ${Colors.gray.lowContrast};
     }
+
+    &:hover{
+        cursor: not-allowed;
+    }
 `;

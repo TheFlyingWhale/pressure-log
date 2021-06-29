@@ -13,4 +13,11 @@ export const StyledResetButton = styled(Button)`
     &:disabled{
         background-color: ${Colors.gray.lowContrast};
     }
+
+    @media(hover:hover){
+        &:hover{
+            ${props => props.disabled ? 'cursor: not-allowed;' : 'cursor: pointer;'};
+            background-color: ${props => props.disabled ? Colors.gray.lowContrast : Colors.red.hover};
+        }
+    }
 `;
